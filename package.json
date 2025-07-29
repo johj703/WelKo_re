@@ -7,7 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen": "npx supabase gen types typescript --project-id netvvmmkvqmzzmsgzjgx --schema public > src/types/supabase.ts"
+    "gen": "npx supabase gen types typescript --project-id netvvmmkvqmzzmsgzjgx --schema public > src/types/supabase.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:mainpage": "jest __tests__/app/page.test.js --verbose --logHeapUsage",
+    "test:mainpage:watch": "jest __tests__/app/page.test.js --watch --verbose",
+    "test:ci": "jest --ci --coverage --watchAll=false --maxWorkers=2"
   },
   "dependencies": {
     "@portone/browser-sdk": "^0.0.8",
