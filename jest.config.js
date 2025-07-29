@@ -34,7 +34,7 @@ const customJestConfig = {
   ],
 
   // 성능 리포터 추가
-  reporters: ['default', ['<rootDir>/__tests__/utils/performence-reporter.js']]
+  reporters: ['default', ['<rootDir>/__tests__/utils/performance-reporter.js']]
 };
 
 module.exports = createJestConfig(customJestConfig);
