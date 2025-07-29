@@ -45,8 +45,8 @@ export async function initiatePayment(
   try {
     // 기본 결제 옵션 설정
     const paymentOptions: any = {
-      storeId: process.env.NEXT_PUBLIC_POSTONE_STORE_ID || '',
-      channelKey: process.env.NEXT_PUBLIC_POSTONE_KG_CHANNEL_KEY || '',
+      storeId: process.env.NEXT_PUBLIC_PORTONE_STORE_ID || '',
+      channelKey: process.env.NEXT_PUBLIC_PORTONE_KG_CHANNEL_KEY || '',
       paymentId: `payment${crypto.randomUUID().split('-')[0]}`,
       orderName: post.title,
       totalAmount: totalAmountInCents,
