@@ -1,37 +1,20 @@
-/// <reference types="cypress" />
-// ***********************************************
-// This example commands.ts shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+// cypress/support/commands.ts
+
+// 기존 내용 유지하고 아래에 추가
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      login(username: string, password: string): Chainable<void>;
+      // 다른 커스텀 명령어들의 타입 정의
+    }
+  }
+}
+
+Cypress.Commands.add('login', (username: string, password: string) => {
+  cy.get('[data-testid="username"]').type(username);
+  cy.get('[data-testid="password"]').type(password);
+  cy.get('[data-testid="login-button"]').click();
+});
+
+// 빈 export로 모듈화
+export {};
