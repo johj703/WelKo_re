@@ -15,7 +15,8 @@
     "test:mainpage:watch": "jest __tests__/app/page.test.js --watch --verbose",
     "test:ci": "jest --ci --coverage --watchAll=false --maxWorkers=2",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "test:e2e": "cypress run"
   },
   "dependencies": {
     "@portone/browser-sdk": "^0.0.8",

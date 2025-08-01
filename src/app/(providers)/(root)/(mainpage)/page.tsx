@@ -13,19 +13,28 @@ export default function Home() {
   return (
     <>
       <HeadMeta />
-      <div className="relative">
-        <div className="md:h-[560px]">
+      <div className="relative" data-testid="main-page">
+        <div className="md:h-[560px]" data-testid="slide-section">
           <SlideImage />
         </div>
         <div
           className="bottom-0 left-0 right-0 rounded-t-3xl bg-white p-4 md:p-0 md:px-[88px]"
           style={{ height: '20%', top: '80%' }}
+          data-testid="content-section"
         >
-          <CircleImageList />
-          <PopularPostList />
+          <div data-testid="circle-image-section">
+            <CircleImageList />
+          </div>
+          <div data-testid="popular-posts-section">
+            <PopularPostList />
+          </div>
           <Suspense fallback={<div>Loading...</div>}>
-            <BestPostsList />
-            <PostsList />
+            <div data-testid="best-posts-section">
+              <BestPostsList />
+            </div>
+            <div data-testid="posts-list-section">
+              <PostsList />
+            </div>
           </Suspense>
         </div>
       </div>
